@@ -211,3 +211,19 @@ body.dark .btn {
     border-color: #666;
     color: #ddd;
 }
+
+.Busqueda input::placeholder {
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    color: #555;
+}
+
+.crear-post input::placeholder{
+  opacity: 1 !important;
+    color: #555;
+}
+
+.crear-post textarea::placeholder{
+  opacity: 1 !important;
+    color: #555;
+}

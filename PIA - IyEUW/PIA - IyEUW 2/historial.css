@@ -189,3 +189,9 @@ body.dark .btn {
   flex-direction: column;
   gap: 20px; /* ← separación entre comentarios */
 }
+
+.Busqueda input::placeholder {
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    color: #555;
+}

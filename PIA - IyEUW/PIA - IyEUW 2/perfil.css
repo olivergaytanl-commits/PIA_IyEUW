@@ -117,3 +117,9 @@ body.dark .btn {
     color: white;
     border-color: #888;
 }
+
+.Busqueda input::placeholder {
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    color: #555;
+}

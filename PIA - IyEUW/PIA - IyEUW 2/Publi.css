@@ -1,26 +1,9 @@
-/*Este diseño se pone a todo el texto dentro de body*/
-body{
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    overflow: hidden; /*evita scroll general */
-}
-
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
   background-color: #446447;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: transform 0.3s ease; /*animación suave */
-}
-
-/* Estado oculto */
-.navbar.hide{
-    transform: translateY(-100%);
 }
 
 .nav-left,
@@ -35,35 +18,37 @@ body{
 }
 
 hr{
-  margin: 0;
+    margin: 0;
+}
+
+.Busqueda input{
+    flex: 1;
 }
 
 .Busqueda{
-  display: flex;
-  gap:5px;
-  width:80%;
+    display: flex;
+    gap:5px;
+    width:80%;
+}
+
+
+/*Este diseño se pone a todo el texto dentro de body*/
+body{
+    font-family: 'Raleway', sans-serif;
 }
 
 /*Aquí inicia el diseño de la barra lateral*/
 .layout{
-  display: flex;
-  height: calc(100vh - 70px); /* resta altura del navbar */
-  background-color: #EDFFE4;
-  margin: 0;
-  padding: 0;
-}
-
-/* cuando el navbar desaparece */
-.layout.full{
-  height: 100vh;
+    display: flex;
+    background-color: #EDFFE4;
 }
 
 .sidebar {
   width: 250px;
+  height: 92.2vh; /* ocupa toda la pantalla */
   background-color: #72A877;
   color: white;
   padding: 20px;
-  height: 100%;
 }
 
 .sidebar ul {
@@ -88,30 +73,37 @@ hr{
 }
 /*Final de barra lateral*/
 
-/* CONTENIDO PRINCIPAL */
-.contenido{
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto; /*único scroll */
-    height: 100%;
+.contenido {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: flex-start;
+  width: 100%;
+  padding: 40px;
 }
 
-/* RECUADRO */
-.card-contenido{
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+/*Caja de publicación*/
+
+.crear-post{
+     background-color: white;
+    padding: 30px;
+    width: 1200px;        /* más ancho */
+    max-width: 90%;      /* adaptable a pantallas */
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
 }
 
-section {
-    margin-top: 70px;
-    transition: margin-top 0.3s ease; /* animación */
+.crear-post h3{
+    margin-bottom: 15px;
 }
 
-/* cuando navbar desaparece */
-section.full {
-    margin-top: 0;
+.crear-post label{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.publicar{
+    margin-top: 15px;
+    width: 100%;
 }
 
 /* Acá es el diseño de apriencia*/
@@ -135,7 +127,8 @@ body.dark {
     color: white;
 }
 
-/* MODO OSCURO GENERAL */
+/* MODO OSCURO COMPLETO */
+
 body.dark {
     background-color: #121212;
     color: #e0e0e0;
@@ -160,13 +153,13 @@ body.dark .sidebar li:hover {
     background-color: #333;
 }
 
-/* TARJETA PRINCIPAL */
-body.dark .card-contenido {
+/* CAJA DE PUBLICACIÓN */
+body.dark .crear-post {
     background-color: #1e1e1e;
     color: #e0e0e0;
 }
 
-/* INPUT Y BOTONES */
+/* INPUTS */
 body.dark input,
 body.dark textarea {
     background-color: #2a2a2a;
@@ -174,7 +167,24 @@ body.dark textarea {
     border: 1px solid #444;
 }
 
+/* BOTÓN */
 body.dark .btn {
     border-color: #666;
     color: #ddd;
+}
+
+.Busqueda input::placeholder {
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    color: #555;
+}
+
+.crear-post input::placeholder{
+  opacity: 1 !important;
+    color: #555;
+}
+
+.crear-post textarea::placeholder{
+  opacity: 1 !important;
+    color: #555;
 }

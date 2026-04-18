@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="discusión.css" rel="stylesheet">
+    <link href="Publi.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
-    <title>Discusiones</title>
+    <title>Publicar</title>
 </head>
 <body>
 
@@ -51,78 +51,38 @@
     <li><a href="InicioS.html">Iniciar sesión</a></li>
     <li><a href="#">Cerrar sesión</a></li>
 </ul>
-</aside>
+</aside>    
 
-<main class="contenido">
+    <main class="contenido">
 
-<!-- Crear discusión -->
-<div class="crear-post mb-4">
-    <h4>Crear discusión</h4>
+        <div class="crear-post">
 
-    <input type="text" id="titulo" class="form-control mb-2" placeholder="Título de la discusión">
+            <h3>Crear publicación</h3>
 
-    <textarea id="contenido" class="form-control mb-2" placeholder="Escribe tu comentario..."></textarea>
+            <form>
 
-    <button class="btn btn-primary" onclick="crearPost()">Publicar</button>
-</div>
+                <label>Título de la publicación</label>
+                <input type="text" class="form-control" placeholder="Ingrese el título">
 
-<!-- Contenedor de publicaciones -->
-<div id="contenedor-posts">
+                <label>Datos de la publicación</label>
+                <textarea class="form-control" rows="4" placeholder="Describe tu publicación"></textarea>
 
-    <div class="post">
-        <div class="post-header">
-            <img src="perfil.jpg" class="foto-perfil">
-            <span class="usuario">Usuario123</span>
+                <label>Multimedia (opcional)</label>
+                <input type="file" class="form-control" accept="image/*,video/*">
+
+                <button type="submit" class="btn btn-outline-success publicar">
+                    Publicar
+                </button>
+
+            </form>
+
         </div>
 
-        <h4 class="post-titulo">Comentario</h4>
-        <span class="categoria">Definición 1</span>
+    </main>
 
-        <p class="post-texto">
-            Este es un ejemplo del texto que se usa como comentario.
-        </p>
-    </div>
-
-</div>
-
-</main>
-  
 </div>
 
 <script>
-
-// CREAR POST
-function crearPost() {
-    const titulo = document.getElementById("titulo").value;
-    const contenido = document.getElementById("contenido").value;
-
-    if (titulo === "" || contenido === "") {
-        alert("Completa todos los campos");
-        return;
-    }
-
-    const contenedor = document.getElementById("contenedor-posts");
-
-    const nuevoPost = document.createElement("div");
-    nuevoPost.classList.add("post");
-
-    nuevoPost.innerHTML = `
-        <div class="post-header">
-            <img src="perfil.jpg" class="foto-perfil">
-            <span class="usuario">Tú</span>
-        </div>
-
-        <h4 class="post-titulo">${titulo}</h4>
-        <span class="categoria">Nueva</span>
-
-        <p class="post-texto">${contenido}</p>
-    `;
-
-    contenedor.prepend(nuevoPost);
-
-    document.getElementById("titulo").value = "";
-    document.getElementById("contenido").value = "";
-}
 
 // DROPDOWN
 function toggleApariencia() {
