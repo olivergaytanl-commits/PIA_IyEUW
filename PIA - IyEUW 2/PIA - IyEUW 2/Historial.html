@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="historial.css" rel="stylesheet">
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="Inicio.html" class="nav-left">Inicio</a>
+
+    <div class="Busqueda">
+        <input type="text" class="form-control nav-center" placeholder="Ingrese lo que desea buscar aquí">
+        <button class="btn btn-outline-success nav-center">Buscar</button>
+    </div>
+    
+    <a href="#" class="sesion nav-right">📖</a>
+    <a href="Perfil.html" class="sesion nav-right">Perfil</a>
+</nav>
+
+<hr>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+    <h2>Servicios en línea:</h2>
+    <ul>
+    <li><a href="Publi.html">Crear publicación</a></li>
+
+    <li class="dropdown">
+        <a href="#" onclick="toggleApariencia(); return false;">Apariencia</a>
+        <ul class="submenu" id="submenuApariencia">
+            <li><a href="#" onclick="setTheme('light')">Claro</a></li>
+            <li><a href="#" onclick="setTheme('dark')">Oscuro</a></li>
+        </ul>
+    </li>
+
+    <li><a href="Discusión.html">Discusiones</a></li>
+    <li><a href="Historial.html">Historial</a></li>
+
+    <li><a href="articulo.html">Artículo</a></li>
+
+    <hr>
+
+    <li><a href="InicioS.html">Iniciar sesión</a></li>
+    <li><a href="#">Cerrar sesión</a></li>
+</ul>
+</aside>
+
+    <!-- CONTENIDO -->
+    <main class="contenido">
+
+        <div id="contenedor-posts">
+
+            <div class="post">
+                <h4 class="post-titulo">Título</h4>
+
+                <p class="post-texto">
+                    Aquí va a ir la información de las palabras.
+                    Datos curiosos, etc.
+                </p>
+
+                <p class="post-texto">
+                    Fecha: 16/04/2026
+                </p>
+            </div>
+
+            <div class="post">
+                <h4 class="post-titulo">Otro ejemplo</h4>
+
+                <p class="post-texto">
+                    Aquí va a ir la información de las palabras.
+                    Datos curiosos, etc.
+                </p>
+
+                <p class="post-texto">
+                    Fecha: 12/04/2026
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+
+// Toggle submenu
+function toggleApariencia() {
+    const submenu = document.getElementById("submenuApariencia");
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+// CAMBIAR TEMA + GUARDAR
+function setTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+    } else {
+        document.body.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+    }
+}
+
+// CARGAR TEMA GUARDADO
+window.onload = function() {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+        document.body.classList.add("dark");
+    }
+};
+
+// Cerrar menú si haces clic fuera
+document.addEventListener("click", function(event) {
+    const submenu = document.getElementById("submenuApariencia");
+    const boton = document.querySelector(".dropdown > a");
+
+    if (!boton.contains(event.target) && !submenu.contains(event.target)) {
+        submenu.style.display = "none";
+    }
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* RESET GENERAL */
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    overflow: hidden; /* evita scroll general */
+}
+
+/* NAVBAR */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #446447;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+/* OCULTAR NAVBAR */
+.navbar.hide{
+    transform: translateY(-100%);
+}
+
+/* ELEMENTOS NAV */
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* BUSCADOR */
+.Busqueda{
+    display: flex;
+    gap: 5px;
+    width: 80%;
+}
+
+/* 🔥 INPUT EN NEGRITA (CLAVE) */
+.Busqueda input{
+    font-weight: bold;
+}
+
+/* 🔥 PLACEHOLDER EN NEGRITA */
+.Busqueda input::placeholder{
+    font-weight: bold;
+    opacity: 1;
+    color: #555;
+}
+
+/* BOTÓN */
+.Busqueda button{
+    font-weight: bold;
+}
+
+/* LAYOUT GENERAL */
+.layout{
+    display: flex;
+    height: calc(100vh - 70px);
+    background-color: #EDFFE4;
+    margin: 0;
+    padding: 0;
+}
+
+.layout.full{
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background-color: #72A877;
+    color: white;
+    padding: 20px;
+    height: 100%;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #869181;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+}
+
+/* SUBMENÚ */
+.submenu {
+    display: none;
+    list-style: none;
+    padding-left: 15px;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    font-size: 14px;
+}
+
+/* CONTENIDO */
+.contenido{
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* TARJETA */
+.card-contenido{
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+/* SECCIÓN */
+section {
+    margin-top: 70px;
+    transition: margin-top 0.3s ease;
+}
+
+section.full {
+    margin-top: 0;
+}
+
+/* MODO OSCURO GENERAL */
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* NAVBAR */
+body.dark .navbar {
+    background-color: #1e1e1e;
+}
+
+/* LAYOUT */
+body.dark .layout {
+    background-color: #181818;
+}
+
+/* SIDEBAR */
+body.dark .sidebar {
+    background-color: #222;
+}
+
+body.dark .sidebar li:hover {
+    background-color: #333;
+}
+
+/* TARJETA */
+body.dark .card-contenido {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* INPUTS */
+body.dark input,
+body.dark textarea {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+}
+
+/* BOTONES */
+body.dark .btn {
+    border-color: #666;
+    color: #ddd;
+}
